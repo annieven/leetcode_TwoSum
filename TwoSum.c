@@ -32,8 +32,8 @@ int main()
 {
     int* test = NULL;
     int size, i;
-    int array[3] = {3, 2, 4};
-    int target = 6;
+    int array[4] = {2, 7, 11, 15};
+    int target = 22;
     printf("Hello world!\n");
 
     test = twoSum(array, sizeof(array)/sizeof(int), target, &size);
