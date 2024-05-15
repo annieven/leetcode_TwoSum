@@ -1,22 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-
+#include <string.h>
 
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
-int* twoSum(int* nums, int numsSize, int target, int* returnSize){
-    int* result = malloc(2*sizeof(int));
-    int rest, i, j;
+int* twoSum(int* nums, int numsSize, int target, int* returnSize)
+{
+    int i, j;
+    int* result = 0;
 
-    *returnSize = 2;
-    for (i = 0; i < numsSize; i ++)
+    result = malloc(2*sizeof(int));
+
+    if(result == NULL)
+        return NULL;
+    else
+        *returnSize = 2;
+
+    for(i = 0; i < numsSize; i ++)
     {
-        rest = target - nums[i];
-        for (j = i + 1; j < numsSize; j ++)
+        int check = target - nums[i];
+        for(j = i + 1; j < numsSize; j ++)
         {
-            if (nums[j] == rest)
+            if(nums[j] == check)
             {
                 result[0] = i;
                 result[1] = j;
@@ -25,25 +31,22 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
         }
     }
 
-    return NULL;
+    return result;
 }
 
 int main()
 {
-    int* test = NULL;
-    int size, i;
-    int array[4] = {2, 7, 11, 15};
-    int target = 22;
-    printf("Hello world!\n");
+    int outputSize;
+    int *output = NULL;
+    int input[4] = {2, 7, 11, 15};
+    int target = 9;
 
-    test = twoSum(array, sizeof(array)/sizeof(int), target, &size);
+    output = twoSum(input, 4, target, &outputSize);
 
-    if (test)
+    if(output != NULL)
     {
-        for (i = 0; i < size; i ++)
-            printf("%d ", test[i]);
-
-        free(test);
+        printf("output: %d, %d\n\n", output[0], output[1]);
+        free(output);
     }
 
     return 0;
