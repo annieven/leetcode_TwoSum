@@ -1,5 +1,9 @@
 # leetcode_TwoSum
 
+## compiler
+
+gcc main.c -o a.out
+
 ## URL
 ###### leetcode 0001
 https://leetcode.com/problems/two-sum/
@@ -24,3 +28,4 @@ https://leetcode.com/problems/two-sum/
 	git status
 	git log
 	gitk
+

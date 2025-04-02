@@ -13,7 +13,7 @@
 int* twoSum(int* nums, int numsSize, int target, int* returnSize)
 {
     int i, j;
-    int* result = 0;
+    int* result = NULL;
 
     result = malloc(2*sizeof(int));
 
