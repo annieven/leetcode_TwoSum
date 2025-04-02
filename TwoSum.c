@@ -46,7 +46,7 @@ int main()
     int input[4] = {2, 7, 11, 15};
     int target = 9;
 
-    output = twoSum(input, 4, target, &outputSize);
+    output = twoSum(input, sizeof(input)/sizeof(int), target, &outputSize);
 
     if(output != NULL)
     {
